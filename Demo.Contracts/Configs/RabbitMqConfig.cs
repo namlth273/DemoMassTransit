@@ -1,6 +1,6 @@
 namespace Demo.Contracts.Configs
 {
-    public class RabbitMqConfig
+    public class RabbitMqConfig : IRabbitMqConfig
     {
         public string Host { get; set; }
         public string VirtualHost { get; set; }
