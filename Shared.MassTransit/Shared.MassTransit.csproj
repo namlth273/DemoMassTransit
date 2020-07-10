@@ -5,8 +5,13 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="MassTransit" Version="7.0.0-develop.2855" />
-      <PackageReference Include="MassTransit.Autofac" Version="7.0.0-develop.2855" />
+      <PackageReference Include="MassTransit" Version="7.0.1-develop.2865" />
+      <PackageReference Include="MassTransit.Autofac" Version="7.0.1-develop.2865" />
+      <PackageReference Include="MassTransit.RabbitMQ" Version="7.0.1-develop.2865" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Demo.Contracts\Demo.Contracts.csproj" />
     </ItemGroup>
 
 </Project>

@@ -7,10 +7,7 @@
     <ItemGroup>
       <PackageReference Include="Autofac" Version="5.2.0" />
       <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="6.0.0" />
-      <PackageReference Include="MassTransit" Version="7.0.0-develop.2855" />
-      <PackageReference Include="MassTransit.AspNetCore" Version="7.0.0-develop.2855" />
-      <PackageReference Include="MassTransit.Autofac" Version="7.0.0-develop.2855" />
-      <PackageReference Include="MassTransit.RabbitMQ" Version="7.0.0-develop.2855" />
+      <PackageReference Include="MassTransit.AspNetCore" Version="7.0.1-develop.2865" />
       <PackageReference Include="Serilog" Version="2.9.0" />
       <PackageReference Include="Serilog.AspNetCore" Version="3.2.0" />
       <PackageReference Include="Serilog.Enrichers.Environment" Version="2.1.3" />

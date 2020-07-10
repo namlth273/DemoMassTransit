@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Demo.Contracts.Configs;
 using MassTransit;
 using MassTransit.AutofacIntegration;
 
@@ -28,7 +29,22 @@ namespace Shared.MassTransit
                 .Where(t => t.GetInterfaces()
                     .Any(i => i.IsGenericType &&
                               i.GetGenericTypeDefinition() == genericType));
-            ;
+        }
+
+        public static void UseRabbitMq(this IContainerBuilderBusConfigurator builder)
+        {
+            builder.UsingRabbitMq((context, config) =>
+            {
+                var rabbitConfig = context.GetService<IRabbitMqConfig>();
+
+                config.Host(rabbitConfig.Host, rabbitConfig.VirtualHost, h =>
+                {
+                    h.Username(rabbitConfig.Username);
+                    h.Password(rabbitConfig.Password);
+                });
+
+                config.ConfigureEndpoints(context);
+            });
         }
     }
 }

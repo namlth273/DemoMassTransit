@@ -15,7 +15,7 @@ namespace Shared.Console.Common
                 configuration.GetSection("RabbitMq").Bind(rabbitConfig);
                 return rabbitConfig;
             }).As<IRabbitMqConfig>();
-            
+
             return builder;
         }
     }
