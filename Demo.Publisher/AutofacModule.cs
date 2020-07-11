@@ -1,5 +1,6 @@
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using Demo.Contracts;
 using MassTransit;
 using Microsoft.Extensions.DependencyInjection;
 using Shared.Console.Common;
@@ -15,6 +16,8 @@ namespace Demo.Publisher
 
             builder.AddMassTransit(massBuilder => { massBuilder.UseRabbitMq(); });
 
+            MassTransit.Context.MessageCorrelation.UseCorrelationId<IUserCreated>(c => c.CorrelationId);
+            
             var services = new ServiceCollection();
 
             services.AddHostedService<DemoHostedService>();

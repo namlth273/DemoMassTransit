@@ -1,3 +1,4 @@
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 using Demo.Contracts;
@@ -22,6 +23,7 @@ namespace Demo.Publisher
         {
             await _endpoint.Publish<IUserCreated>(new UserCreated
             {
+                CorrelationId = Guid.NewGuid(),
                 FirstName = "Nam",
                 LastName = "Le"
             }, stoppingToken);
