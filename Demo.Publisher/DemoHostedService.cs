@@ -21,12 +21,19 @@ namespace Demo.Publisher
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            await _endpoint.Publish<IUserCreated>(new UserCreated
+            while (!stoppingToken.IsCancellationRequested)
             {
-                CorrelationId = Guid.NewGuid(),
-                FirstName = "Nam",
-                LastName = "Le"
-            }, stoppingToken);
+                var id = Guid.NewGuid();
+
+                await _endpoint.Publish<IUserCreated>(new UserCreated
+                {
+                    CorrelationId = id,
+                    FirstName = $"Nam {id}",
+                    LastName = "Le"
+                }, stoppingToken);
+
+                //await Task.Delay(TimeSpan.FromSeconds(1), stoppingToken);
+            }
         }
     }
 }

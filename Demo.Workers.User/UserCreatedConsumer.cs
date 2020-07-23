@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using Demo.Contracts;
 using MassTransit;
@@ -14,10 +15,11 @@ namespace Demo.Workers.User
             _logger = logger;
         }
 
-        public Task Consume(ConsumeContext<IUserCreated> context)
+        public async Task Consume(ConsumeContext<IUserCreated> context)
         {
+            await Task.Delay(TimeSpan.FromSeconds(10));
+
             _logger.Information("FirstName: {0}", context.Message.FirstName);
-            return Task.CompletedTask;
         }
     }
 }

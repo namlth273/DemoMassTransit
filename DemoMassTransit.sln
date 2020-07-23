@@ -15,6 +15,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.MassTransit", "Share
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Workers.User", "Demo.Workers.User\Demo.Workers.User.csproj", "{6404E2DA-7C53-4380-AA84-6898FA11387C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Folder", "Solution Folder", "{A941FA2A-288A-4601-8113-8FFD9B766C0D}"
+ProjectSection(SolutionItems) = preProject
+	Dockerfile = Dockerfile
+EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
