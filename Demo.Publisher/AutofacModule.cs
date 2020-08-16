@@ -19,12 +19,6 @@ namespace Demo.Publisher
 
             MassTransit.Context.MessageCorrelation.UseCorrelationId<IUserCreated>(c => c.CorrelationId);
 
-            var services = new ServiceCollection();
-
-            services.AddHostedService<DemoHostedService>();
-
-            builder.Populate(services);
-
             builder.Register(r =>
             {
                 var config = new WorkerConfig();
@@ -32,6 +26,12 @@ namespace Demo.Publisher
                 config.NumberOfMessageToPublish = configuration.GetValue<int?>("NumberOfMessageToPublish");
                 return config;
             }).As<IConfig>();
+
+            var services = new ServiceCollection();
+
+            services.AddHostedService<DemoHostedService>();
+
+            builder.Populate(services);
         }
     }
 }
