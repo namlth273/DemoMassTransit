@@ -1,10 +1,10 @@
-using System;
-using System.Threading;
-using System.Threading.Tasks;
 using Demo.Contracts;
 using MassTransit;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using System;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Demo.Publisher
 {
@@ -12,16 +12,22 @@ namespace Demo.Publisher
     {
         private readonly ILogger<DemoHostedService> _logger;
         private readonly IPublishEndpoint _endpoint;
+        private readonly IConfig _config;
 
-        public DemoHostedService(ILogger<DemoHostedService> logger, IPublishEndpoint endpoint)
+        public DemoHostedService(ILogger<DemoHostedService> logger, IPublishEndpoint endpoint, IConfig config)
         {
             _logger = logger;
             _endpoint = endpoint;
+            _config = config;
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            while (!stoppingToken.IsCancellationRequested)
+            if (stoppingToken.IsCancellationRequested) return;
+
+            if (_config.NumberOfMessageToPublish == null) return;
+
+            for (int i = 0; i < _config.NumberOfMessageToPublish; i++)
             {
                 var id = Guid.NewGuid();
 
