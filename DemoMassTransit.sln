@@ -1,24 +1,25 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30330.147
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Publisher", "Demo.Publisher\Demo.Publisher.csproj", "{21B66712-B035-41B9-B371-ED09AA64857A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Publisher", "Demo.Publisher\Demo.Publisher.csproj", "{21B66712-B035-41B9-B371-ED09AA64857A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.Common", "Shared.Common\Shared.Common.csproj", "{2BD99640-7049-4024-BDF6-3EAA5474326A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared.Common", "Shared.Common\Shared.Common.csproj", "{2BD99640-7049-4024-BDF6-3EAA5474326A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.Console.Common", "Shared.Console.Common\Shared.Console.Common.csproj", "{14F34EDA-A277-4CF7-A054-929BB334845F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared.Console.Common", "Shared.Console.Common\Shared.Console.Common.csproj", "{14F34EDA-A277-4CF7-A054-929BB334845F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Contracts", "Demo.Contracts\Demo.Contracts.csproj", "{5E2DCD67-FBAC-4D1C-B71F-755A6E98D16E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Contracts", "Demo.Contracts\Demo.Contracts.csproj", "{5E2DCD67-FBAC-4D1C-B71F-755A6E98D16E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.MassTransit", "Shared.MassTransit\Shared.MassTransit.csproj", "{9B9D7705-E57F-4474-9F49-8E51CDF243F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared.MassTransit", "Shared.MassTransit\Shared.MassTransit.csproj", "{9B9D7705-E57F-4474-9F49-8E51CDF243F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Workers.User", "Demo.Workers.User\Demo.Workers.User.csproj", "{6404E2DA-7C53-4380-AA84-6898FA11387C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Workers.User", "Demo.Workers.User\Demo.Workers.User.csproj", "{6404E2DA-7C53-4380-AA84-6898FA11387C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Folder", "Solution Folder", "{A941FA2A-288A-4601-8113-8FFD9B766C0D}"
-ProjectSection(SolutionItems) = preProject
-	Dockerfile = Dockerfile
-EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yaml = docker-compose.yaml
+		Dockerfile = Dockerfile
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,9 +29,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{21B66712-B035-41B9-B371-ED09AA64857A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -105,5 +103,11 @@ Global
 		{6404E2DA-7C53-4380-AA84-6898FA11387C}.Release|x64.Build.0 = Release|Any CPU
 		{6404E2DA-7C53-4380-AA84-6898FA11387C}.Release|x86.ActiveCfg = Release|Any CPU
 		{6404E2DA-7C53-4380-AA84-6898FA11387C}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4AA67BB6-1373-4573-8FBC-AE4E588A25B7}
 	EndGlobalSection
 EndGlobal

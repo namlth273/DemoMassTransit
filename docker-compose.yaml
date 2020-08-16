@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  demo-workers-user:
+    image: demo-workers-user:0.0.1
+    container_name: demo-workers-user
+    build: .
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      RabbitMQ__Host: localhost
+      RabbitMQ__VirtualHost: /
+      RabbitMQ__Username: admin
+      RabbitMQ__Password: admin
+
+#docker-compose -f "docker-compose.yml" up -d --build
+#docker-compose -f "docker-compose.yml" down
+#docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=P@ssw0rd@123' -p 1434:1433 --name sql1 -d mcr.microsoft.com/mssql/server
+#docker exec -it sql1 mkdir /var/opt/mssql/backup
+#docker cp DemoPattern.bak sql1:/var/opt/mssql/data
